@@ -1,6 +1,6 @@
 # XPike.Redis
 
-[![Build Status](https://dev.azure.com/xpike/xpike/_apis/build/status/xpike-redis?branchName=master)](https://dev.azure.com/xpike/xpike/_build/latest?definitionId=6&branchName=master)
+[![Build Status](https://dev.azure.com/xpike/xpike/_apis/build/status/xpike.redis?branchName=master)](https://dev.azure.com/xpike/xpike/_build/latest?definitionId=7&branchName=master)
 ![Nuget](https://img.shields.io/nuget/v/XPike.Redis)
 
 Provides basic Redis support for xPike.
