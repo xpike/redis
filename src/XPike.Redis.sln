@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPike.Redis", "XPike.Redis\XPike.Redis.csproj", "{5192452E-105B-4DE5-8DE2-4288F339C809}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{291CB571-88B5-4359-8445-FBBBF624944B}"
+	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
+		..\.gitignore = ..\.gitignore
+		..\azure-pipelines.yml = ..\azure-pipelines.yml
+		common.build.props = common.build.props
+		..\xpike-pacakge-icon.png = ..\xpike-pacakge-icon.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "README", "README", "{CB1B1B73-3373-46DB-87A2-2897BAE8B1B4}"
+	ProjectSection(SolutionItems) = preProject
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{33A260A0-7168-4B3D-89C2-765FC7CA0F60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{48899E80-1C89-432A-8F9D-EBFC77767494}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{715E8348-454E-4F3F-A111-6C16347CDBE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5192452E-105B-4DE5-8DE2-4288F339C809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5192452E-105B-4DE5-8DE2-4288F339C809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5192452E-105B-4DE5-8DE2-4288F339C809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5192452E-105B-4DE5-8DE2-4288F339C809}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5192452E-105B-4DE5-8DE2-4288F339C809} = {48899E80-1C89-432A-8F9D-EBFC77767494}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57289FE7-F29F-455A-86A1-CD2D036451E3}
+	EndGlobalSection
+EndGlobal
