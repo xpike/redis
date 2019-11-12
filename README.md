@@ -18,6 +18,9 @@ access to the underlying IConnectionMultiplexer.
 
 Connections are defined and managed via application settings.
 
+The current implementation serializes objects in JSON as a Redis String.
+
+
 ## Exported Services
 
 ### Singletons
@@ -69,7 +72,7 @@ public void ConfigureServices(IServiceCollection services)
   - `XPike.Settings`
     - `XPike.Configuration`
       - `XPike.IoC`
-    - `XPike.IoC`
+  - `XPike.IoC`
 
 ## Building and Testing
 
