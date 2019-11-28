@@ -23,6 +23,12 @@
   <PropertyGroup Condition="'$(TargetFramework)' == 'net452'">
     <DefineConstants>NETFX</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\xpike\redis\src\XPike.Redis\XPike.Redis.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\xpike\redis\src\XPike.Redis\XPike.Redis.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
     <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
   </ItemGroup>
