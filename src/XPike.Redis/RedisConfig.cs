@@ -3,13 +3,13 @@
 namespace XPike.Redis
 {
     /// <summary>
-    /// Settings for xPike Redis.
+    /// Configuration for xPike Redis.
     /// </summary>
-    public class RedisSettings
+    public class RedisConfig
     {
         /// <summary>
         /// The set of configured connections.
         /// </summary>
-        public Dictionary<string, RedisConnectionSettings> Connections { get; set; }
+        public Dictionary<string, RedisConnectionConfig> Connections { get; set; }
     }
 }

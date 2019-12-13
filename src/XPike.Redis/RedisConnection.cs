@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using StackExchange.Redis;
+using XPike.Configuration;
 using XPike.Logging;
-using XPike.Settings;
 
 namespace XPike.Redis
 {
@@ -17,7 +17,7 @@ namespace XPike.Redis
     public class RedisConnection
         : IRedisConnection
     {
-        private readonly ISettings<RedisSettings> _settings;
+        private readonly IConfig<RedisConfig> _config;
         private readonly ILog<RedisConnection> _logger;
 
         private IConnectionMultiplexer _multiplexer;
@@ -30,34 +30,34 @@ namespace XPike.Redis
         /// 
         /// This is intended to only be called from an IRedisConnectionProvider.
         /// </summary>
-        /// <param name="connectionName">The name of the connection settings to load from configuration.</param>
-        /// <param name="settings">The RedisSettings to use.</param>
+        /// <param name="connectionName">The name of the connection to load from configuration.</param>
+        /// <param name="config">The RedisConfig to use.</param>
         /// <param name="logger">The ILogService to log exceptions and connection information to.</param>
-        public RedisConnection(string connectionName, ISettings<RedisSettings> settings, ILog<RedisConnection> logger)
+        public RedisConnection(string connectionName, IConfig<RedisConfig> config, ILog<RedisConnection> logger)
         {
             ConnectionName = connectionName;
-            _settings = settings;
+            _config = config;
             _logger = logger;
         }
 
-        private RedisConnectionSettings GetSettings() =>
-            _settings.Value.Connections[ConnectionName];
+        private RedisConnectionConfig GetConfig() =>
+            _config.CurrentValue.Connections[ConnectionName];
 
         public async Task<bool> ConnectAsync()
         {
-            var settings = GetSettings();
+            var config = GetConfig();
 
-            if (!settings.Enabled)
+            if (!config.Enabled)
                 return false;
 
             try
             {
-                var options = ConfigurationOptions.Parse(settings.ConnectionString);
+                var options = ConfigurationOptions.Parse(config.ConnectionString);
 
                 var sb = new StringBuilder();
                 using (var logWriter = new StringWriter(sb))
                 {
-                    _multiplexer = await ConnectionMultiplexer.ConnectAsync(options, logWriter);
+                    _multiplexer = await ConnectionMultiplexer.ConnectAsync(options, logWriter).ConfigureAwait(false);
 
                     _logger.Info($"Redis Connection '{ConnectionName}' Connection Log: {sb}");
                 }
@@ -67,11 +67,11 @@ namespace XPike.Redis
             }
             catch (Exception ex)
             {
-                _logger.Error($"Failed to connect to Redis at {settings.ConnectionString}: {ex.Message} ({ex.GetType()})",
+                _logger.Error($"Failed to connect to Redis at {config.ConnectionString}: {ex.Message} ({ex.GetType()})",
                     ex,
                     new Dictionary<string, string>
                     {
-                        {"settings", JsonConvert.SerializeObject(settings)}
+                        {"configuration", JsonConvert.SerializeObject(config)}
                     });
 
                 return false;

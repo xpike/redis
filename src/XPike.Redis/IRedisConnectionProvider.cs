@@ -11,12 +11,12 @@ namespace XPike.Redis
     {
         /// <summary>
         /// Gets and/or establishes a connection using the specified connection name.
-        /// Configuration values are loaded from application settings.
+        /// Configuration values are loaded from application configuration.
         /// 
         /// If no configuration for the specified connection name is found, the default connection will be used.
         /// If no default configuration is found, an InvalidOperationException will be thrown.
         /// </summary>
-        /// <param name="connectionName">The name of the connection to use when loading settings from application configuration.</param>
+        /// <param name="connectionName">The name of the connection to use when loading from application configuration.</param>
         /// <param name="timeout">An optional timeout.  By default, StackExchange.Redis uses a 5-second timeout when creating a connection.</param>
         /// <param name="ct">An optional Cancellation Token to abort the connection.</param>
         /// <returns></returns>

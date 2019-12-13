@@ -69,10 +69,8 @@ public void ConfigureServices(IServiceCollection services)
 ## Dependencies
 
 - `XPike.Logging`
-  - `XPike.Settings`
-    - `XPike.Configuration`
-      - `XPike.IoC`
-  - `XPike.IoC`
+- `XPike.Configuration`
+- `XPike.IoC`
 
 ## Building and Testing
 
