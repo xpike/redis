@@ -1,9 +1,9 @@
 ﻿namespace XPike.Redis
 {
     /// <summary>
-    /// Settings for an individual Redis server/cluster.
+    /// Configuration for an individual Redis server/cluster.
     /// </summary>
-    public class RedisConnectionSettings
+    public class RedisConnectionConfig
     {
         /// <summary>
         /// The Connection String to use.

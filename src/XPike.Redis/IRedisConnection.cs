@@ -10,7 +10,7 @@ namespace XPike.Redis
     public interface IRedisConnection
     {
         /// <summary>
-        /// The name of the connection in the application settings.
+        /// The name of the connection in the application configuration.
         /// </summary>
         string ConnectionName { get; }
 
