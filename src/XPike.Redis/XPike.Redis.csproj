@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XPike.Logging" Version="1.1.0" />
+    <PackageReference Include="XPike.Logging" Version="1.1.1" />
   </ItemGroup>
 
   <!-- .NET Standard 2.0 references, compilation flags and build options -->
